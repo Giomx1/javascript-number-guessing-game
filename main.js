@@ -28,3 +28,7 @@ function checkNumber() {//function with variable checkNumber.
   }
 }
 enter.addEventListener("click", checkNumber);//function will run with "click" event
+
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
