@@ -11,9 +11,9 @@
   <div>
     <form onsubmit="return false;" id="myForm">
       <label id="outputText" for="user">Guess the number between 1 and 100</label><br>
-      <input id="userInput" type="value">
+      <input type="number" min="1" max="100"  id="userInput">
       <button id="enterButton">Enter</button>
-      <button type="button" onclick= "myFunction()" id="resetButton">Reset</button>
+      <button type ="reset" type="button" id="resetButton">Reset</button>
     </form>
   </div>
   <script src="main.js"></script>
