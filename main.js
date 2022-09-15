@@ -26,10 +26,12 @@ function checkNumber() {//function with variable checkNumber.
     output.style.color = "green";
    }
    if (userGuess != randomNumber) {
+    alert(guessesLeft + " tries left", )
     guessesLeft --
    }
    if (guessesLeft === 0) {
-    output.innerHTML = "Game Over";
+    alert ("Game Over, correct answer was " + randomNumber);
+    addEventListener("click", resetGame)
    }
  }  
 
@@ -37,8 +39,17 @@ function checkNumber() {//function with variable checkNumber.
 enter.addEventListener("click", checkNumber);//function will run with "click" event
 
 
-function myFunction() {
+function resetGame() {
   randomNumber = Math.ceil(Math.random() * 100);
   output.innerHTML = "Game has been reset";
+  guessesLeft = 3;
+  if (userGuess != randomNumber) {
+    alert(guessesLeft + " tries left", )
+    guessesLeft --
+   }
+    if (guessesLeft === 0) {
+    alert ("Game Over, correct answer was " + randomNumber);
+    addEventListener("click", resetGame)
+   }
 }
-reset.addEventListener("click", myFunction);
+reset.addEventListener("click", resetGame);
