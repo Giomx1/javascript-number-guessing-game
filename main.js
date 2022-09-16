@@ -44,32 +44,12 @@ function resetGame() {
   output.innerHTML = "Game has been reset";
   guessesLeft = 3;
   if (userGuess != randomNumber) {
+     guessesLeft --;
     alert(guessesLeft + " tries left")
-    guessesLeft --;
    }
     if (guessesLeft === 0) {
     alert ("Game Over, correct answer was " + randomNumber);
     addEventListener("click", resetGame)
    }
 }
-reset.addEventListener("click", resetGame);
- }  
-
-
-enter.addEventListener("click", checkNumber);//function will run with "click" event
-
-
-function resetGame() {
-  randomNumber = Math.ceil(Math.random() * 100);
-  output.innerHTML = "Game has been reset";
-  guessesLeft = 3;
-  if (userGuess != randomNumber) {
-    alert(guessesLeft + " tries left", )
-    guessesLeft --
-   }
-    if (guessesLeft === 0) {
-    alert ("Game Over, correct answer was " + randomNumber);
-    addEventListener("click", resetGame)
-   }
-}
-reset.addEventListener("click", resetGame);
+reset.addEventListener("click", myFunction);
