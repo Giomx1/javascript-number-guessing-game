@@ -4,7 +4,7 @@ let output = document.getElementById("outputText");
 let input = document.getElementById("userInput");
 let randomNumber = Math.ceil(Math.random() * 100);//User must guess a number from 0-100 so a random number must be created every time the game is played.
 let guessesLeft = 3
-let userGuess = Number(input.value)
+let userGuess = input
 
 function checkNumber() {//function with variable checkNumber.
   if (userGuess > randomNumber){// Using if methods to display what will be shown if user is right, ,guess too high, guess too low, or invalid entry
