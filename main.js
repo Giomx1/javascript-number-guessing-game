@@ -52,4 +52,4 @@ function resetGame() {
     addEventListener("click", resetGame)
    }
 }
-reset.addEventListener("click", myFunction);
+reset.addEventListener("click", resetGame);
