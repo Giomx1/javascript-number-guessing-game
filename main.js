@@ -3,9 +3,9 @@ let reset = document.getElementById("resetButton");
 let output = document.getElementById("outputText");
 let input = document.getElementById("userInput");
 let randomNumber = Math.ceil(Math.random() * 100);//User must guess a number from 0-100 so a random number must be created every time the game is played.
-let guessesLeft = 3
-let userGuess = input
-
+let guessesLeft = 3;
+let userGuess = Number(input.value);
+console.log(randomNumber);
 function checkNumber() {//function with variable checkNumber.
   if (userGuess > randomNumber){// Using if methods to display what will be shown if user is right, ,guess too high, guess too low, or invalid entry
     output.innerHTML = "You guessed too high";
@@ -29,27 +29,19 @@ function checkNumber() {//function with variable checkNumber.
     guessesLeft --; 
     alert(guessesLeft + " tries left")
    }
-    if (guessesLeft === 0) {
-    alert ("Game Over, correct answer was " + randomNumber);
-    addEventListener("click", resetGame)
+    if (guessesLeft < 1) {
+    alert ("Game Over, correct answer was " + randomNumber, " game will be reset");
+    resetGame()
    }
 }
 
 
 enter.addEventListener("click", checkNumber);//function will run with "click" event
-
+reset.addEventListener("click", resetGame);
 
 function resetGame() {
   randomNumber = Math.ceil(Math.random() * 100);
-  output.innerHTML = "Game has been reset";
   guessesLeft = 3;
-  if (userGuess != randomNumber) {
-     guessesLeft --;
-    alert(guessesLeft + " tries left")
-   }
-    if (guessesLeft === 0) {
-    alert ("Game Over, correct answer was " + randomNumber);
-    addEventListener("click", resetGame)
-   }
-}
-reset.addEventListener("click", resetGame);
+  input = "";
+  console.log(randomNumber);
+};
